@@ -1,0 +1,90 @@
+@use '../../../styles/variables.scss' as variables;
+@use '../../../styles/fonts.scss' as fonts;
+@use '../../../styles/mixins/mixins' as mixins;
+
+.login-page {
+  display: flex;
+  justify-content: space-between;
+  gap:  variables.$gap;
+
+  @include mixins.on-tablet {
+    align-items: center;
+  }
+
+  &__form-section {
+    @include mixins.on-tablet {
+      max-width: variables.$form-width;
+    }
+  }
+
+  &__form {
+    background-color: var(--bg-color);
+    border-radius:  variables.$small-gap;
+    border: variables.$border;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    padding: variables.$small-gap;
+    gap: variables.$gap;
+
+    @include mixins.on-tablet {
+      padding: variables.$small-gap;
+    }
+
+    @include mixins.on-desktop {
+      padding: variables.$gap;
+    }
+  }
+
+  &__container-input {
+    margin: 0;
+    gap: variables.$small-gap;
+  }
+
+  &__input {
+    padding: variables.$small-gap;
+    border-radius: variables.$border-radius;
+    height: variables.$button-height;
+    background-color: var(--hover-color);
+    width: 100%;
+    border: variables.$border;
+    outline: none;
+
+    &:focus {
+      border: 1px solid var(--accent-color);
+    }
+
+    &:hover {
+      border: 1px solid var(--accent-color);
+    }
+
+    &::placeholder {
+      font-family: fonts.$main-font;
+      font-size: 12px;
+      color: var(--secondary-color);
+    }
+  }
+
+
+
+  &__link-return {
+    letter-spacing: -0.01em;
+    text-decoration-line: underline;
+    color: var(--accent-color);
+    cursor: pointer;
+  }
+
+  &__image-for-desktop {
+    display: none;
+    max-width: 100%;
+
+    @media (min-width: 670px) {
+      display: block;
+    }
+  }
+
+  &__title {
+    color: variables.$primary-color;
+    margin-bottom: variables.$gap;
+  }
+}

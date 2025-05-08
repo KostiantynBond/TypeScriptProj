@@ -1,0 +1,36 @@
+@use './../../../styles/variables.scss' as variables;
+@use './../../../styles/mixins/mixins.scss' as mixins;
+
+.catalog-page {
+
+  &__filters {
+    display: flex;
+    flex-wrap: wrap;
+    gap: variables.$gap;
+  }
+
+  &__category {
+    margin-top: variables.$gap;
+    display: grid;
+    gap:  variables.$small-gap;
+    grid-template-columns: 1fr;
+    justify-items: center;
+
+    @include mixins.on-tablet {
+      grid-template-columns: repeat(2, 1fr);
+    }
+
+    @media (min-width: 900px) {
+      grid-template-columns: repeat(3, 1fr);
+    }
+
+    @include mixins.on-desktop {
+      grid-template-columns: repeat(4, 1fr);
+    }
+  }
+}
+
+.dropdowns-container {
+  display: flex;
+  gap: variables.$small-gap;
+}

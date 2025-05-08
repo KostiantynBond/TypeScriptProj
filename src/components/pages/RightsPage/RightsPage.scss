@@ -1,0 +1,34 @@
+@use '../../../styles/variables.scss' as variables;
+
+.rights-page {
+
+  &__title {
+    margin-bottom: variables.$big-gap;
+    text-align: center;
+  }
+
+  &__section {
+    margin-bottom: variables.$gap;
+    padding: variables.$small-gap;
+    background-color: var(--bg-color);
+    border-radius: 8px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  }
+
+  &__subtitle {
+    margin-bottom: variables.$small-gap;
+  }
+
+  &__text {
+    color: var(--secondary-color);
+  }
+
+  &__link {
+    color: var(--accent-color);
+    text-decoration: none;
+
+    &:hover {
+      text-decoration: underline;
+    }
+  }
+}

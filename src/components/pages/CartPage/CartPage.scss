@@ -1,0 +1,66 @@
+@use '../../../styles/variables.scss' as variables;
+@use '../../../styles/fonts.scss' as fonts;
+@use '../../..//styles/mixins/mixins.scss' as mixins;
+
+.cart-page {
+  &__checkout-button {
+    width: 100%;
+  }
+
+  &__container {
+    flex-direction: column;
+    gap: variables.$gap;
+
+    @include mixins.on-desktop {
+      flex-direction: row;
+      gap: variables.$small-gap;
+    }
+  }
+
+  &__items {
+    display: flex;
+    flex-direction: column;
+    gap: variables.$small-gap;
+  }
+
+  &__summary {
+    display: flex;
+    align-self: flex-start;
+    width: 100%;
+    flex: 1;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    padding: variables.$medium-gap;
+    border: 1px solid var(--elements-color);
+    border-radius: variables.$cart-item-border-radius;
+    text-align: center;
+
+    &__total {
+      margin-bottom: variables.$small-gap;
+    }
+
+    .cart-page__total--price {
+      font-family: fonts.$bold-font;
+      line-height: variables.$line-height-h3;
+    }
+
+    .cart-page__total--text {
+      font-family: fonts.$main-font;
+      color: var(--secondary-color);
+    }
+
+    .cart-page__divider {
+      width: 100%;
+      height: 1px;
+      background-color: var(--elements-color);
+      margin-top: 1rem;
+      margin-bottom: 1rem;
+
+      @include mixins.on-desktop {
+        margin-top: variables.$small-gap;
+        margin-bottom: variables.$small-gap;
+      }
+    }
+  }
+}

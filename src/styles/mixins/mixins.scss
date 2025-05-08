@@ -1,0 +1,66 @@
+@use '../variables.scss' as variables;
+
+@mixin on-tablet {
+  @media (min-width: variables.$min-tablet-width) {
+    @content;
+  }
+}
+
+@mixin on-large-tablet {
+  @media (min-width: variables.$max-tablet-width) {
+    @content;
+  }
+}
+
+@mixin on-desktop {
+  @media (min-width: variables.$min-desktop-width) {
+    @content;
+  }
+}
+
+@mixin container {
+  max-width: 90%;
+  @content;
+
+  @include on-desktop {
+    width: variables.$max-container-width;
+  }
+}
+
+@mixin page-grid {
+  --columns: 2;
+
+  display: grid;
+  column-gap: variables.$small-gap;
+  grid-template-columns: repeat(var(--columns), 1fr);
+
+  @include on-tablet {
+    --columns: 6;
+  }
+
+  @include on-desktop {
+    --columns: 12;
+  }
+}
+
+@mixin hover($property, $toValue) {
+  transition: #{$property} variables.$effectDuration;
+  &:hover {
+    #{$property}: $toValue;
+  }
+}
+
+// @mixin hover($property, $toValue) {
+//   transition: #{$property} variables.$effectDuration;
+//   &:hover {
+//     #{$property}: $toValue;
+//   }
+// }
+
+// TO DO: REMOVE THAT TEST MIXINS!!!!!!!!
+
+// TO DO: Create more animations (?)
+
+@mixin smooth-transition($property) {
+  transition: $property variables.$fast-animation-duration ease;
+}

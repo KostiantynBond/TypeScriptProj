@@ -1,0 +1,19 @@
+@use '../../styles/variables.scss' as variables;
+
+.back {
+  display: flex;
+  align-items: center;
+  padding-bottom: variables.$small-gap;
+
+  &__button {
+    display: flex;
+    align-items: center;
+    gap: variables.$tiny-gap;
+    font-size: variables.$font-size-text;
+    color: var(--secondary-color);
+
+    &:hover {
+      color: var(--primary-color);
+    }
+  }
+}

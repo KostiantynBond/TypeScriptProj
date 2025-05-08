@@ -1,0 +1,38 @@
+@use '../../styles/variables' as variables;
+
+.search-bar {
+  display: flex;
+  align-items: center;
+  width: 100%;
+  margin-bottom: variables.$small-gap;
+  padding: variables.$tiny-gap variables.$small-gap;
+  border: variables.$border;
+  border-radius: variables.$border-radius;
+  background-color: var(--bg-color);
+
+  .icon {
+    color: var(--secondary-color);
+    font-size: variables.$font-size-text-small;
+  }
+
+  &:has(&__input:focus) {
+    border-color: var(--accent-color);
+
+    .icon {
+      color: var(--accent-color);
+    }
+  }
+
+  &__input {
+    flex: 1;
+    padding: 8px 12px;
+    font-size: variables.$font-size-text;
+    border: variables.$border;
+    border-color: transparent;
+    border-radius: variables.$border-radius;
+    outline: none;
+    transition: border-color 0.3s;
+    background-color: var(--bg-color);
+    color: var(--primary-color);
+  }
+}

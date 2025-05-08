@@ -1,0 +1,17 @@
+[
+  {
+    "id": "slide_1",
+    "content": "img/banners/desktop/Slider_1.jpg",
+    "mobileContent": "img/banners/mobile/banner_mobile.png"
+  },
+  {
+    "id": "slide_2",
+    "content": "img/banners/desktop/Slider_2.jpg",
+    "mobileContent": "img/banners/mobile/banner_3_mobile.png"
+  },
+  {
+    "id": "slide_3",
+    "content": "img/banners/desktop/Slider_3.jpg",
+    "mobileContent": "img/banners/mobile/banner_2_mobile.png"
+  }
+]

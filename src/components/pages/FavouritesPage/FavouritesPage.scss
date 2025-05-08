@@ -1,0 +1,52 @@
+@use '../../../styles/variables.scss' as variables;
+@use '../../../styles/fonts.scss' as fonts;
+@use '../../../styles/mixins/mixins' as mixins;
+
+.routing-section {
+  height: variables.$small-gap;
+  margin-top: variables.$gap;
+
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  gap: variables.$tiny-gap;
+
+  &__text {
+    color: var(--secondary-color);
+    font-family: fonts.$main-font;
+    font-size: variables.$font-size-text-small;
+    line-height: variables.$line-height-text-small;
+  }
+}
+
+.hero-section {
+  margin-bottom: variables.$gap;
+
+  &__title {
+    margin-bottom: variables.$tiny-gap;
+  }
+
+  &__text {
+    font-family: fonts.$main-font;
+    font-size: variables.$font-size-text;
+    line-height: variables.$line-height-text;
+    color: var(--secondary-color);
+  }
+}
+
+.items-section {
+  &__container {
+    @include mixins.page-grid;
+
+    row-gap: variables.$big-gap;
+    margin-bottom: variables.$big-gap;
+  }
+
+  &__item {
+    grid-column: span 2;
+
+    @include mixins.on-tablet {
+      grid-column: span 3;
+    }
+  }
+}

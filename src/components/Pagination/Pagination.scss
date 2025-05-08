@@ -1,0 +1,52 @@
+@use '../../styles/variables.scss' as variables;
+
+.pagination {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  list-style: none;
+  padding: 0;
+  gap: variables.$smaller-gap;
+  margin: variables.$small-gap;
+
+  &-item {
+    cursor: pointer;
+
+    &--active {
+      background-color: var(--primary-color);
+      border-color: var(--primary-color);
+      color: var(--bg-color);
+    }
+
+    &--switch {
+      border-color: var(--icons-color);
+    }
+
+    &--switch:first-of-type {
+      margin-right: variables.$smaller-gap;
+    }
+
+    &--switch:last-of-type {
+      margin-left: variables.$smaller-gap;
+    }
+
+    &-link {
+      user-select: none;
+      -webkit-user-select: none;
+      -ms-user-select: none;
+      width: 100%;
+      height: 100%;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
+
+    &--disabled {
+      opacity: 0.5;
+    }
+
+    // &--disabled:hover {
+      
+    // }
+  }
+}
